@@ -12,6 +12,8 @@ class NyscBot:
 	def __init__(self) -> None:
 		self.option = Options()
 		self.option.add_argument("--headless")
+		self.option.add_argument("--no-sandbox")
+		self.option.add_argument("--disable-gpu")
 		self.slackClient = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
 		self.driver = webdriver.Chrome(ChromeDriverManager().install(),options=self.option)
 	
