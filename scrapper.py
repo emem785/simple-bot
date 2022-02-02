@@ -12,7 +12,7 @@ class NyscBot:
 	def __init__(self) -> None:
 		self.option = Options()
 		self.option.add_argument("--headless")
-		self.slackClient = WebClient(token="xoxb-3056601028273-3044089109794-FmNzmZupQw3tXaKRQhHepiuy")
+		self.slackClient = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
 		self.driver = webdriver.Chrome(ChromeDriverManager().install(),options=self.option)
 	
 	def open_url(self,url:str)-> None:
