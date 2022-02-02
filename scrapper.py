@@ -24,6 +24,7 @@ class NyscBot:
 		image = Path(file_path)
 		if image.is_file():
 			os.remove(file_path)
+			print("deleted image")
 		self.driver.save_screenshot(file_path)
 
 
